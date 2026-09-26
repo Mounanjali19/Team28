@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+data/*.db
+data/*.db-*
+data/cache/
+data/seed.log
+mockbank/data/
+node_modules/
+frontend/dist/
+reports/*.pdf
+.env
+.pytest_cache/
+test-results/
+playwright-report/

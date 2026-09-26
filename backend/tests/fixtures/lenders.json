@@ -1,0 +1,32 @@
+[
+  {
+    "lender_id":"LND_6YSQL6",
+    "lender_name":"Northbridge Bank",
+    "lender_type":"bank"
+  },
+  {
+    "lender_id":"LND_DVNXKW",
+    "lender_name":"Suryoday MFI",
+    "lender_type":"mfi"
+  },
+  {
+    "lender_id":"LND_3LEP0T",
+    "lender_name":"Kestrel Fintech",
+    "lender_type":"fintech"
+  },
+  {
+    "lender_id":"LND_X9XMLL",
+    "lender_name":"Anchorline Bank",
+    "lender_type":"bank"
+  },
+  {
+    "lender_id":"LND_XMGD46",
+    "lender_name":"Vantage MFI",
+    "lender_type":"mfi"
+  },
+  {
+    "lender_id":"LND_L1386O",
+    "lender_name":"Pinewood Fintech",
+    "lender_type":"fintech"
+  }
+]

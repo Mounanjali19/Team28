@@ -1,0 +1,359 @@
+{
+  "model_version": "pd-logreg-1.0",
+  "algorithm": "LogisticRegression (L2, C=0.3) on standardized, median-imputed features",
+  "target": "default_12m (90+ dpd within 12 months of booking), approved historical applications only",
+  "split": "temporal: train application_date < 2025-03-01 (n=3076), test >= 2025-03-01 (n=1525)",
+  "features": [
+    "tenure_months",
+    "telecom_on_time_share",
+    "education_ordinal",
+    "spend_to_income",
+    "essential_share",
+    "cashflow_volatility",
+    "days_saved",
+    "on_time_rate",
+    "debt_to_income",
+    "has_credit_line",
+    "utilization",
+    "delinquency_events_24m",
+    "worst_dpd_24m",
+    "late_under_30_24m",
+    "habit_count",
+    "inquiries_6m",
+    "address_changes_12m",
+    "log_income",
+    "income_cv",
+    "lifestyle_share",
+    "age",
+    "city_tier",
+    "late_bills_12m",
+    "has_loan",
+    "autopay_share",
+    "income_missing",
+    "rent_streak_months",
+    "residence_months",
+    "emp_salaried",
+    "emp_self_employed",
+    "emp_freelancer",
+    "emp_gig",
+    "emp_student",
+    "emp_unemployed",
+    "housing_own",
+    "housing_rent",
+    "housing_family",
+    "housing_none"
+  ],
+  "excluded_inputs": [
+    "rule score",
+    "rule points",
+    "tier",
+    "any post-decision record",
+    "generator latent truth"
+  ],
+  "test": {
+    "auc": 0.8275,
+    "brier": 0.0745,
+    "threshold": 0.12,
+    "precision": 0.2593,
+    "recall": 0.6233,
+    "confusion_matrix": {
+      "tn": 1119,
+      "fp": 260,
+      "fn": 55,
+      "tp": 91
+    },
+    "calibration_deciles": [
+      {
+        "decile": 1,
+        "n": 153,
+        "mean_predicted": 0.0027,
+        "observed_rate": 0.0
+      },
+      {
+        "decile": 2,
+        "n": 152,
+        "mean_predicted": 0.0069,
+        "observed_rate": 0.0066
+      },
+      {
+        "decile": 3,
+        "n": 153,
+        "mean_predicted": 0.0128,
+        "observed_rate": 0.0065
+      },
+      {
+        "decile": 4,
+        "n": 152,
+        "mean_predicted": 0.0222,
+        "observed_rate": 0.0132
+      },
+      {
+        "decile": 5,
+        "n": 153,
+        "mean_predicted": 0.0331,
+        "observed_rate": 0.0392
+      },
+      {
+        "decile": 6,
+        "n": 152,
+        "mean_predicted": 0.0492,
+        "observed_rate": 0.0789
+      },
+      {
+        "decile": 7,
+        "n": 152,
+        "mean_predicted": 0.073,
+        "observed_rate": 0.1382
+      },
+      {
+        "decile": 8,
+        "n": 153,
+        "mean_predicted": 0.1109,
+        "observed_rate": 0.1111
+      },
+      {
+        "decile": 9,
+        "n": 152,
+        "mean_predicted": 0.1639,
+        "observed_rate": 0.2039
+      },
+      {
+        "decile": 10,
+        "n": 153,
+        "mean_predicted": 0.3414,
+        "observed_rate": 0.3595
+      }
+    ],
+    "expected_calibration_error": 0.0177,
+    "base_rate": 0.0957,
+    "mean_predicted": 0.0817,
+    "n": 1525
+  },
+  "train_auc": 0.8402,
+  "comparison_random_forest_test_auc": 0.8074,
+  "shuffled_label_test_auc": 0.4288,
+  "rule_score_test_auc": 0.6859,
+  "coefficients": [
+    {
+      "feature": "autopay_share",
+      "label": "use of autopay",
+      "coef": -1.3069
+    },
+    {
+      "feature": "rent_streak_months",
+      "label": "on-time rent streak",
+      "coef": -0.274
+    },
+    {
+      "feature": "delinquency_events_24m",
+      "label": "30+ day late payments (24 months)",
+      "coef": 0.2668
+    },
+    {
+      "feature": "late_bills_12m",
+      "label": "late bills in the last 12 months",
+      "coef": -0.2553
+    },
+    {
+      "feature": "late_under_30_24m",
+      "label": "short (under 30 day) late payments",
+      "coef": 0.25
+    },
+    {
+      "feature": "log_income",
+      "label": "income level",
+      "coef": 0.2089
+    },
+    {
+      "feature": "missing:income_cv",
+      "label": "missing:income_cv",
+      "coef": -0.2046
+    },
+    {
+      "feature": "debt_to_income",
+      "label": "debt-to-income ratio",
+      "coef": -0.1792
+    },
+    {
+      "feature": "has_credit_line",
+      "label": "holding a credit line",
+      "coef": -0.1586
+    },
+    {
+      "feature": "telecom_on_time_share",
+      "label": "mobile/internet bill regularity",
+      "coef": -0.1508
+    },
+    {
+      "feature": "days_saved",
+      "label": "savings buffer",
+      "coef": -0.1307
+    },
+    {
+      "feature": "lifestyle_share",
+      "label": "lifestyle (dining/shopping) spending share",
+      "coef": 0.1293
+    },
+    {
+      "feature": "cashflow_volatility",
+      "label": "cash-flow volatility",
+      "coef": 0.1274
+    },
+    {
+      "feature": "has_loan",
+      "label": "existing loan",
+      "coef": -0.1261
+    },
+    {
+      "feature": "essential_share",
+      "label": "share of essential spending",
+      "coef": 0.114
+    },
+    {
+      "feature": "worst_dpd_24m",
+      "label": "worst days past due",
+      "coef": -0.1009
+    },
+    {
+      "feature": "housing_rent",
+      "label": "housing: rent",
+      "coef": 0.0984
+    },
+    {
+      "feature": "age",
+      "label": "age",
+      "coef": 0.0865
+    },
+    {
+      "feature": "address_changes_12m",
+      "label": "recent address changes",
+      "coef": 0.0757
+    },
+    {
+      "feature": "housing_family",
+      "label": "housing: family",
+      "coef": -0.0734
+    },
+    {
+      "feature": "housing_none",
+      "label": "housing: none",
+      "coef": -0.0709
+    },
+    {
+      "feature": "emp_salaried",
+      "label": "employment type: salaried",
+      "coef": -0.0653
+    },
+    {
+      "feature": "emp_self_employed",
+      "label": "employment type: self_employed",
+      "coef": 0.0456
+    },
+    {
+      "feature": "emp_freelancer",
+      "label": "employment type: freelancer",
+      "coef": 0.0431
+    },
+    {
+      "feature": "city_tier",
+      "label": "city tier",
+      "coef": -0.0407
+    },
+    {
+      "feature": "spend_to_income",
+      "label": "spend-to-income ratio",
+      "coef": 0.038
+    },
+    {
+      "feature": "habit_count",
+      "label": "positive savings habits",
+      "coef": 0.0247
+    },
+    {
+      "feature": "on_time_rate",
+      "label": "on-time bill payments",
+      "coef": -0.0243
+    },
+    {
+      "feature": "utilization",
+      "label": "credit utilization",
+      "coef": -0.0188
+    },
+    {
+      "feature": "education_ordinal",
+      "label": "education level",
+      "coef": 0.0164
+    },
+    {
+      "feature": "emp_gig",
+      "label": "employment type: gig",
+      "coef": 0.0135
+    },
+    {
+      "feature": "emp_unemployed",
+      "label": "employment type: unemployed",
+      "coef": -0.0129
+    },
+    {
+      "feature": "inquiries_6m",
+      "label": "recent credit inquiries",
+      "coef": -0.0117
+    },
+    {
+      "feature": "income_missing",
+      "label": "income not verifiable",
+      "coef": -0.0091
+    },
+    {
+      "feature": "missing:spend_to_income",
+      "label": "missing:spend_to_income",
+      "coef": -0.0091
+    },
+    {
+      "feature": "missing:cashflow_volatility",
+      "label": "missing:cashflow_volatility",
+      "coef": -0.0091
+    },
+    {
+      "feature": "missing:days_saved",
+      "label": "missing:days_saved",
+      "coef": -0.0091
+    },
+    {
+      "feature": "missing:debt_to_income",
+      "label": "missing:debt_to_income",
+      "coef": -0.0091
+    },
+    {
+      "feature": "missing:log_income",
+      "label": "missing:log_income",
+      "coef": -0.0091
+    },
+    {
+      "feature": "tenure_months",
+      "label": "time in current job",
+      "coef": -0.0088
+    },
+    {
+      "feature": "residence_months",
+      "label": "time at current address",
+      "coef": 0.0088
+    },
+    {
+      "feature": "income_cv",
+      "label": "income volatility",
+      "coef": 0.0075
+    },
+    {
+      "feature": "emp_student",
+      "label": "employment type: student",
+      "coef": 0.0072
+    },
+    {
+      "feature": "housing_own",
+      "label": "housing: own",
+      "coef": 0.0011
+    }
+  ],
+  "deployed_model": "refit on all approved historical applications after holdout evaluation"
+}

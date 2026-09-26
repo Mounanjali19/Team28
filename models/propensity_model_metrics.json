@@ -1,0 +1,215 @@
+{
+  "model_version": "propensity-logreg-1.0",
+  "algorithm": "LogisticRegression (L2, C=0.5)",
+  "target": "offer accepted (1) vs declined/ignored (0)",
+  "split": "temporal: train offer_date < 2025-12-01 (n=22848), test >= 2025-12-01 (n=3905)",
+  "features": [
+    "policy_score",
+    "score_margin",
+    "product_P_01",
+    "product_P_02",
+    "product_P_03",
+    "product_P_04",
+    "product_P_05",
+    "is_card",
+    "offered_rate",
+    "log_offered_amount",
+    "channel_in_app",
+    "channel_push",
+    "channel_sms",
+    "campaign_targeted",
+    "lifestyle_share",
+    "spend_to_income",
+    "log_income",
+    "age",
+    "has_credit_line",
+    "sim_events_90d",
+    "sim_target_match_90d",
+    "catalog_views_90d",
+    "sim_scenarios_90d"
+  ],
+  "note": "Policy score is recomputed by the rule engine as of each offer month (PP-06); the dataset's score_at_offer proxy is not used.",
+  "test": {
+    "auc": 0.6167,
+    "brier": 0.1011,
+    "threshold": 0.2,
+    "precision": 0.2426,
+    "recall": 0.1247,
+    "confusion_matrix": {
+      "tn": 3270,
+      "fp": 178,
+      "fn": 400,
+      "tp": 57
+    },
+    "calibration_deciles": [
+      {
+        "decile": 1,
+        "n": 391,
+        "mean_predicted": 0.0669,
+        "observed_rate": 0.0946
+      },
+      {
+        "decile": 2,
+        "n": 390,
+        "mean_predicted": 0.0785,
+        "observed_rate": 0.0692
+      },
+      {
+        "decile": 3,
+        "n": 391,
+        "mean_predicted": 0.0857,
+        "observed_rate": 0.0818
+      },
+      {
+        "decile": 4,
+        "n": 390,
+        "mean_predicted": 0.0929,
+        "observed_rate": 0.0744
+      },
+      {
+        "decile": 5,
+        "n": 391,
+        "mean_predicted": 0.1011,
+        "observed_rate": 0.0844
+      },
+      {
+        "decile": 6,
+        "n": 390,
+        "mean_predicted": 0.1099,
+        "observed_rate": 0.0923
+      },
+      {
+        "decile": 7,
+        "n": 390,
+        "mean_predicted": 0.1217,
+        "observed_rate": 0.1231
+      },
+      {
+        "decile": 8,
+        "n": 391,
+        "mean_predicted": 0.1422,
+        "observed_rate": 0.156
+      },
+      {
+        "decile": 9,
+        "n": 390,
+        "mean_predicted": 0.17,
+        "observed_rate": 0.1513
+      },
+      {
+        "decile": 10,
+        "n": 391,
+        "mean_predicted": 0.2096,
+        "observed_rate": 0.243
+      }
+    ],
+    "expected_calibration_error": 0.0161,
+    "base_rate": 0.117,
+    "mean_predicted": 0.1179,
+    "n": 3905
+  },
+  "comparison_decision_tree_test_auc": 0.6115,
+  "lift_top_decile": 2.076,
+  "coefficients": [
+    {
+      "feature": "sim_scenarios_90d",
+      "coef": 0.3734
+    },
+    {
+      "feature": "sim_events_90d",
+      "coef": -0.2524
+    },
+    {
+      "feature": "spend_to_income",
+      "coef": 0.2304
+    },
+    {
+      "feature": "log_income",
+      "coef": 0.2063
+    },
+    {
+      "feature": "catalog_views_90d",
+      "coef": -0.1983
+    },
+    {
+      "feature": "lifestyle_share",
+      "coef": 0.1764
+    },
+    {
+      "feature": "product_P_01",
+      "coef": 0.1445
+    },
+    {
+      "feature": "log_offered_amount",
+      "coef": -0.1041
+    },
+    {
+      "feature": "product_P_02",
+      "coef": -0.0805
+    },
+    {
+      "feature": "score_margin",
+      "coef": 0.0641
+    },
+    {
+      "feature": "product_P_03",
+      "coef": -0.0641
+    },
+    {
+      "feature": "is_card",
+      "coef": 0.0612
+    },
+    {
+      "feature": "policy_score",
+      "coef": -0.0602
+    },
+    {
+      "feature": "product_P_05",
+      "coef": -0.0298
+    },
+    {
+      "feature": "offered_rate",
+      "coef": -0.0191
+    },
+    {
+      "feature": "missing:spend_to_income",
+      "coef": 0.0111
+    },
+    {
+      "feature": "missing:log_income",
+      "coef": 0.0111
+    },
+    {
+      "feature": "product_P_04",
+      "coef": 0.0108
+    },
+    {
+      "feature": "channel_sms",
+      "coef": -0.0093
+    },
+    {
+      "feature": "channel_in_app",
+      "coef": 0.0067
+    },
+    {
+      "feature": "sim_target_match_90d",
+      "coef": -0.0053
+    },
+    {
+      "feature": "has_credit_line",
+      "coef": 0.0041
+    },
+    {
+      "feature": "campaign_targeted",
+      "coef": 0.0015
+    },
+    {
+      "feature": "channel_push",
+      "coef": 0.0008
+    },
+    {
+      "feature": "age",
+      "coef": 0.0008
+    }
+  ]
+}

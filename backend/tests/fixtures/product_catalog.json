@@ -1,0 +1,72 @@
+[
+  {
+    "product_id":"P_01",
+    "product_name":"Starter Credit Card",
+    "min_score":350,
+    "type":"Credit Card",
+    "interest_rate":"12% APR",
+    "interest_rate_pct":12.0,
+    "amount_or_limit_min":15000,
+    "amount_or_limit_max":60000,
+    "tenure_months":null,
+    "annual_fee":0,
+    "segment":"thin_file",
+    "lender_id":"LND_X9XMLL"
+  },
+  {
+    "product_id":"P_02",
+    "product_name":"Micro-Loan Lite",
+    "min_score":550,
+    "type":"Loan",
+    "interest_rate":"17.00% PA",
+    "interest_rate_pct":17.0,
+    "amount_or_limit_min":20000,
+    "amount_or_limit_max":150000,
+    "tenure_months":12.0,
+    "annual_fee":0,
+    "segment":"mass",
+    "lender_id":"LND_X9XMLL"
+  },
+  {
+    "product_id":"P_03",
+    "product_name":"Standard Credit Card",
+    "min_score":650,
+    "type":"Credit Card",
+    "interest_rate":"18.00% APR",
+    "interest_rate_pct":18.0,
+    "amount_or_limit_min":40000,
+    "amount_or_limit_max":200000,
+    "tenure_months":null,
+    "annual_fee":499,
+    "segment":"mass",
+    "lender_id":"LND_L1386O"
+  },
+  {
+    "product_id":"P_04",
+    "product_name":"Premium Personal Loan",
+    "min_score":750,
+    "type":"Loan",
+    "interest_rate":"11.00% PA",
+    "interest_rate_pct":11.0,
+    "amount_or_limit_min":100000,
+    "amount_or_limit_max":1000000,
+    "tenure_months":36.0,
+    "annual_fee":0,
+    "segment":"premium",
+    "lender_id":"LND_6YSQL6"
+  },
+  {
+    "product_id":"P_05",
+    "product_name":"Lifestyle Rewards Card",
+    "min_score":700,
+    "type":"Credit Card",
+    "interest_rate":"16.00% APR",
+    "interest_rate_pct":16.0,
+    "amount_or_limit_min":60000,
+    "amount_or_limit_max":300000,
+    "tenure_months":null,
+    "annual_fee":999,
+    "segment":"lifestyle",
+    "lender_id":"LND_DVNXKW"
+  }
+]
